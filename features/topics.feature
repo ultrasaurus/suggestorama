@@ -15,3 +15,5 @@ Feature: Topics
     And I press "Create"
     Then I should see "Rails Fixtures"
     And I should see a "New topic" link
+
+    
