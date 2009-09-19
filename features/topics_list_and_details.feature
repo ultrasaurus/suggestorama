@@ -13,4 +13,8 @@ Feature: Topics List and Details
   Scenario: Clicking on the topic title
     When I follow "Rails Fixtures"
     Then I should see "Introduce how to add test data with fixtures."
-            
+    # not see show
+    # verify details page
+
+  Scenario: Deleting a topic
+
