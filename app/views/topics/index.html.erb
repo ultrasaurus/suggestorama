@@ -1,0 +1,22 @@
+<h1>Listing topics</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+
+<% @topics.each do |topic| %>
+  <tr>
+    <td><%=h topic.title %></td>
+    <td><%=h topic.description %></td>
+    <td><%= link_to 'Show', topic %></td>
+    <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+    <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New topic', new_topic_path %>
