@@ -2,9 +2,9 @@ require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "pat
 
 
 Then /^I should see a "([^\"]*)" button$/ do |button_name|
-  begin
-    webrat.current_scope.find_button(button_name)
-  rescue Webrat::NotFoundError
-    false
-  end
+  webrat.current_scope.find_button(button_name)
+end
+
+Then /^I should see a "([^\"]*)" link$/ do |link_name|
+  webrat.current_scope.find_link(link_name)
 end
