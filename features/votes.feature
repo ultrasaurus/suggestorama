@@ -16,9 +16,3 @@ Feature: Votes
   Scenario: voting on a topic
     When I follow "+1"
     Then I should see "1 vote"
-    And I should see "-1"
-    
-  Scenario: removing a vote on a topic
-    When I follow "+1"
-    And I follow "-1"
-    Then I should see "0 votes"
