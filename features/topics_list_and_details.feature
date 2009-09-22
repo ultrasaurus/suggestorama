@@ -13,8 +13,10 @@ Feature: Topics List and Details
   Scenario: Clicking on the topic title
     When I follow "Rails Fixtures"
     Then I should see "Introduce how to add test data with fixtures."
-    # not see show
-    # verify details page
+    And I should not see "add a topic"
 
   Scenario: Deleting a topic
+    When I follow "Delete"
+    Then I should not see "Rails Fixtures"
+    And I should see "New topic"
 
