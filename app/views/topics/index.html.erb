@@ -8,11 +8,12 @@
 
 <% @topics.each do |topic| %>
   <tr>
-    <td><%=h topic.title %></td>
+    <td><%= link_to topic.title, edit_topic_path(topic) %></td>
     <td><%=h topic.description %></td>
-    <td><%= link_to 'Show', topic %></td>
+    <td><%= pluralize(topic.votes.count, "vote") %></td>
+    <td><%=link_to "+1", topic_votes_path(topic), :method => :post %></td>
     <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-    <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Delete', topic, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
