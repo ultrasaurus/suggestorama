@@ -23,3 +23,18 @@ Feature: Votes with authentication
     When I follow "+1"
     And I follow "-1"
     Then I should see "0 votes"
+    
+  Scenario: seeing whether or not I have voted
+    When I follow "Rails Fixtures"
+    Then I should see "You have not voted on this talk."
+    
+  Scenario: voting on a topic from the show page
+    When I follow "Rails Fixtures"
+    And I follow "I would attend a meetup on this topic"
+    Then I should see "You have voted for this talk"
+    And I should see "1 vote"
+    And I should see "-1"
+    And I should see "I'm not interested anymore"
+
+
+    
